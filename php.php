@@ -111,7 +111,7 @@ class Bottles {
      */
     protected function verse4(): object
     {
-        echo ($this->bottle - 1) . ' ' . $this->pluralize(($this->bottle - 1)) . " of beer on the wall\n\n";
+        echo ($this->bottle - 1) . ' ' . $this->pluralize($this->bottle - 1) . " of beer on the wall\n\n";
 
         return $this;
     }
