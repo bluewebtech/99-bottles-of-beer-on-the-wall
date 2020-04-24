@@ -1,11 +1,24 @@
 class Bottles {
   /**
+   * The current bottle(s) on the wall.
+   *
+   * @var {Number}
+   */
+  protected bottle: number = 0;
+
+  /**
+   * The total bottles on the wall.
+   *
+   * @var {Number}
+   */
+  protected bottles: number = 0;
+
+  /**
    * The class constructor.
    *
    * @param {Number} bottles
    */
-  constructor(bottles) {
-    this.bottle = 0;
+  constructor(bottles: number) {
     this.bottles = bottles;
   }
 
@@ -14,7 +27,7 @@ class Bottles {
    *
    * @return {Boolean}
    */
-  hasBottles() {
+  hasBottles(): boolean {
     return (this.bottles > 0);
   }
 
@@ -24,7 +37,7 @@ class Bottles {
    * @param {Number} bottle
    * @return {String}
    */
-  pluralize(bottle) {
+  pluralize(bottle: number): string {
     return `bottle${(bottle > 1 || bottle == 0 ? 's' : '')}`;
   }
 
@@ -33,7 +46,7 @@ class Bottles {
    *
    * @return {Void}
    */
-  sing() {
+  sing(): void {
     if (this.hasBottles()) {
       for (let bottle = this.bottles; bottle > 0; bottle--) {
         this.bottle = bottle;

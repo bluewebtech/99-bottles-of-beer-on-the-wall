@@ -1,11 +1,24 @@
 class Bottles {
   /**
+   * The current bottle(s) on the wall.
+   *
+   * @var {Int}
+   */
+  int bottle = 0;
+
+  /**
+   * The total bottles on the wall.
+   *
+   * @var {Int}
+   */
+  int bottles = 0;
+
+  /**
    * The class constructor.
    *
-   * @param {Number} bottles
+   * @param {Int} bottles
    */
-  constructor(bottles) {
-    this.bottle = 0;
+  Bottles(bottles) {
     this.bottles = bottles;
   }
 
@@ -14,7 +27,7 @@ class Bottles {
    *
    * @return {Boolean}
    */
-  hasBottles() {
+  bool hasBottles() {
     return (this.bottles > 0);
   }
 
@@ -24,8 +37,8 @@ class Bottles {
    * @param {Number} bottle
    * @return {String}
    */
-  pluralize(bottle) {
-    return `bottle${(bottle > 1 || bottle == 0 ? 's' : '')}`;
+  String pluralize(int bottle) {
+    return 'bottle' + (bottle > 1 || bottle == 0 ? 's' : '');
   }
 
   /**
@@ -33,9 +46,9 @@ class Bottles {
    *
    * @return {Void}
    */
-  sing() {
+  void sing() {
     if (this.hasBottles()) {
-      for (let bottle = this.bottles; bottle > 0; bottle--) {
+      for (var bottle = this.bottles; bottle > 0; bottle--) {
         this.bottle = bottle;
         this
           .verse1()
@@ -45,7 +58,7 @@ class Bottles {
         ;
       }
     } else {
-      console.log('There are currently no bottles on the wall.');
+      print('There are currently no bottles on the wall.');
     }
   }
 
@@ -55,7 +68,7 @@ class Bottles {
    * @return {Object}
    */
   verse1() {
-    console.log(`${this.bottle} ${this.pluralize(this.bottle)} of beer on the wall`);
+    print(this.bottle.toString() + ' ' + this.pluralize(this.bottle) + ' of beer on the wall');
 
     return this;
   }
@@ -66,7 +79,7 @@ class Bottles {
    * @return {Object}
    */
   verse2() {
-    console.log(`${this.bottle} ${this.pluralize(this.bottle)} of beer`);
+    print(this.bottle.toString() + ' ' + this.pluralize(this.bottle) + ' of beer');
 
     return this;
   }
@@ -77,7 +90,7 @@ class Bottles {
    * @return {Object}
    */
   verse3() {
-    console.log('Take 1 down and pass it around');
+    print('Take 1 down and pass it around');
 
     return this;
   }
@@ -88,11 +101,13 @@ class Bottles {
    * @return {Object}
    */
   verse4() {
-    console.log(`${this.bottle - 1} ${this.pluralize(this.bottle - 1)} of beer on the wall\n`);
+    print((this.bottle - 1).toString() + ' ' + this.pluralize(this.bottle - 1) + ' of beer on the wall\n');
 
     return this;
   }
 }
 
-const bottle = new Bottles(99);
-bottle.sing();
+void main() {
+  var bottle = new Bottles(99);
+  bottle.sing();
+}
