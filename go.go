@@ -37,8 +37,6 @@ func pluralize(bottle int) string {
 
 /**
  * Sing the song.
- *
- * @return void
  */
 func sing() {
   if (hasBottles()) {
@@ -57,7 +55,6 @@ func sing() {
  * Get the first verse of the song.
  *
  * @param int bottle
- * @return void
  */
 func verse1(bottle int) {
   fmt.Println(strconv.Itoa(bottle) + " " + pluralize(bottle) + " of beer on the wall")
@@ -67,7 +64,6 @@ func verse1(bottle int) {
  * Get the second verse of the song.
  *
  * @param int bottle
- * @return void
  */
 func verse2(bottle int) {
   fmt.Println(strconv.Itoa(bottle) + " " + pluralize(bottle) + " of beer")
@@ -75,8 +71,6 @@ func verse2(bottle int) {
 
 /**
  * Get the third verse of the song.
- *
- * @return object
  */
 func verse3() {
   fmt.Println("Take 1 down and pass it around")
@@ -86,7 +80,6 @@ func verse3() {
  * Get the fourth verse of the song.
  *
  * @param int bottle
- * @return object
  */
 func verse4(bottle int) {
   fmt.Println(strconv.Itoa(bottle - 1) + " " + pluralize(bottle - 1) + " of beer on the wall\n")
