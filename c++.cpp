@@ -6,6 +6,11 @@ class Bottles
 {
     public:
 
+    /**
+     * The total bottles on the wall.
+     *
+     * @var int
+     */
     int bottles = 0;
 
     /**
