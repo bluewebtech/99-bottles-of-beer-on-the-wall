@@ -97,7 +97,7 @@ public class Main {
      */
     protected Main verse4(int bottle)
     {
-        System.out.println(bottle - 1 + " " + this.pluralize(bottle - 1) + " of beer\n");
+        System.out.println(bottle - 1 + " " + this.pluralize(bottle - 1) + " of beer on the wall\n");
 
         return this;
     }
