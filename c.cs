@@ -101,10 +101,7 @@ class Bottles
 
         return this;
     }
-}
 
-class Program
-{
     /**
      * The main method.
      *
